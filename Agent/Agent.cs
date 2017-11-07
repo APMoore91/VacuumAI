@@ -36,7 +36,7 @@ namespace IntelligentVacuum.Agent
                     else{                                           //      If the vacuum is moving right
                         action = AgentAction.MOVE_RIGHT;            //          Action = Move Right
                     }
-                    if(roomWidth > 0 && ((0 == room.XAxis && prevX != room.XAxis) || (roomWidth == room.XAxis && prevX != room.XAxis))){
+                    if((roomWidth > 0 && ((0 == room.XAxis && prevX != room.XAxis) || (roomWidth == room.XAxis && prevX != room.XAxis))) || roomWidth == 0){
                                                                     //      If the vacuum is on the side of the room
                         left = !left;                               //          Toggle sweep direction
                         action = AgentAction.MOVE_DOWN;             //          Action = Move Down
